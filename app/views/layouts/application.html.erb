@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <div class="navbar navbar-light bg-light mb-4 p-4">
+      <div>
+        <%= link_to "Restaurant Index", restaurants_path %>
+      </div>
+      <div>
+        <%= link_to "Create Restaurant", new_restaurant_path %>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

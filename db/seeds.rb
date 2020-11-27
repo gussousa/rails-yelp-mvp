@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do
+  restaurant = Restaurant.create(
+    name: Faker::Restaurant.name,
+    address: Faker::Address.full_address,
+    category: %w[chinese italian japanese french belgian smellish][rand(6)],
+    phone_number: Faker::PhoneNumber.phone_number_with_country_code
+  )
+  puts restaurant.valid? ? "#{restaurant.name} created!" : "#{restaurant.name} bot created: invalid..."
+end
