@@ -9,6 +9,12 @@
     <div>
       <%= link_to "Add review", new_restaurant_review_path(@restaurant), class: "btn btn-primary btn-sm" %>
     </div>
+    <hr>
+    <div>
+      <h2>Your review</h2>
+      <%= render 'reviews/form' %>
+    </div>
+    <hr>
     <div>
       <br>
       <h2>Reviews</h2>
