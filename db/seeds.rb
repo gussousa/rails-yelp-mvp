@@ -10,8 +10,17 @@
   restaurant = Restaurant.create(
     name: Faker::Restaurant.name,
     address: Faker::Address.full_address,
-    category: %w[chinese italian japanese french belgian smellish][rand(6)],
+    category: %w[chinese italian japanese french belgian][rand(5)],
     phone_number: Faker::PhoneNumber.phone_number_with_country_code
   )
   puts restaurant.valid? ? "#{restaurant.name} created!" : "#{restaurant.name} bot created: invalid..."
+end
+
+30.times do
+  review = Review.create(
+    content: %w[Excelent Terrible Delicious Marvelous Godlike][rand(4)],
+    rating: (0..5).to_a[rand(6)],
+    restaurant_id: (1..9).to_a[rand(10)]
+  )
+  puts "Review #{review.id} created!"
 end

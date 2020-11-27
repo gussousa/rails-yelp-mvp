@@ -1,0 +1,13 @@
+<% categories = %w[chinese italian japanese french belgian] %>
+
+<%= form_for [@restaurant] do |f| %>
+  <%= f.label :name, class: "mt-3" %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :address, class: "mt-3" %>
+  <%= f.text_field :address, class: "form-control" %>
+  <%= f.label :category, class: "mt-3" %>
+  <%= f.select :category, categories, {}, {class: "form-control form-control-lg"} %>
+  <%= f.label :phone_number, class: "mt-3" %>
+  <%= f.text_field :phone_number, class: "form-control" %>
+  <%= f.submit class: "btn btn-primary mt-4"%>
+<% end %>
